@@ -1,0 +1,13 @@
+<div class="popup">
+  <h1>Are you sure you want to do this?</h1>
+  <p>Your current progress is {{ taskProgress }}</p>
+
+  <div class="btns">
+    <button mat-raised-button color="primary" (click)="onGoBack()">
+      Go Back
+    </button>
+    <button mat-raised-button color="accent" (click)="onCancelTask()">
+      Cancel Task
+    </button>
+  </div>
+</div>

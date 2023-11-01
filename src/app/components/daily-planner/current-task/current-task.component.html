@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-content>
+    <div>
+      <h1>You are currently working on {{ currentTask.name }}</h1>
+      <h2>You have {{ currentTask.time }} minutes to tcomplete this task</h2>
+      <p>Goal: {{ currentTask.description }}</p>
+    </div>
+    <mat-progress-bar
+      mode="determinate"
+      [value]="taskProgress"
+    ></mat-progress-bar>
+    <p class="progress">{{ taskProgress }} %</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="accent" (click)="onStopTask()">
+      Stop Task
+    </button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,33 @@
+<mat-nav-list role="list">
+  <mat-list-item
+    *ngIf="isAuth"
+    role="listitem"
+    routerLink="/daily-planner"
+    (click)="onClickListItem()"
+    >Daily Planner</mat-list-item
+  >
+  <mat-list-item
+    *ngIf="isAuth"
+    role="listitem"
+    routerLink="/tasks"
+    (click)="onClickListItem()"
+    >My Tasks</mat-list-item
+  >
+  <mat-list-item
+    *ngIf="!isAuth"
+    role="listitem"
+    routerLink="/signup"
+    (click)="onClickListItem()"
+    >Signup</mat-list-item
+  >
+  <mat-list-item
+    *ngIf="!isAuth"
+    role="listitem"
+    routerLink="/login"
+    (click)="onClickListItem()"
+    >Login</mat-list-item
+  >
+  <mat-list-item role="listitem" *ngIf="isAuth" (click)="onClickListItem()"
+    >Logout</mat-list-item
+  >
+</mat-nav-list>

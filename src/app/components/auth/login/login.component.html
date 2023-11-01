@@ -1,0 +1,44 @@
+<div class="form-container">
+  <form
+    class="auth-form"
+    [formGroup]="loginFormValues"
+    (ngSubmit)="onSubmitLogin()"
+  >
+    <mat-form-field>
+      <input
+        type="text"
+        matInput
+        placeholder="username"
+        formControlName="username"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        type="email"
+        matInput
+        placeholder="email"
+        formControlName="email"
+      />
+      <mat-error *ngIf="loginFormValues.get('email').hasError('email')"
+        >Invalid email address</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        type="password"
+        matInput
+        placeholder="password"
+        formControlName="password"
+      />
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      class="btn-submit"
+      [disabled]="!loginFormValues.valid && loginFormValues.touched"
+    >
+      Login
+    </button>
+  </form>
+</div>

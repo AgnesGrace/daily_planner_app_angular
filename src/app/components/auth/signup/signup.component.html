@@ -1,0 +1,82 @@
+<div class="form-container">
+  <form
+    class="auth-form"
+    #signupFormValues="ngForm"
+    (ngSubmit)="onSubmitSignupForm(signupFormValues)"
+  >
+    <h1>Welcome! Signup here</h1>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        placeholder="Enter your username"
+        ngModel
+        name="username"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="email"
+        placeholder="Enter your email"
+        ngModel
+        name="email"
+        required
+        email
+      />
+    </mat-form-field>
+    <mat-form-field hintLabel="must be atleat 8 characters">
+      <input
+        matInput
+        [type]="showPassword ? 'text' : 'password'"
+        placeholder="Enter your password"
+        ngModel
+        name="password"
+        required
+        #password="ngModel"
+        minlength="8"
+      />
+      <mat-hint align="end">{{ password.value?.length }}/8</mat-hint>
+      <mat-error *ngIf="password.hasError('minlength')"
+        >password must be at least 8 characters</mat-error
+      >
+      <button
+        mat-icon-button
+        matSuffix
+        type="button"
+        (click)="toggleShowPassword()"
+      >
+        <mat-icon>{{
+          showPassword ? "visibility" : "visibility_off"
+        }}</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        [max]="maxDate"
+        ngModel
+        name="created_at"
+        required
+      />
+      <mat-label>created_at</mat-label>
+      <mat-hint>DD/MM/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        [for]="picker"
+        matIconSuffix
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      class="btn-submit"
+      [disabled]="!signupFormValues.valid && signupFormValues.touched"
+    >
+      Signup
+    </button>
+  </form>
+</div>

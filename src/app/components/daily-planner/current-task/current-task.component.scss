@@ -1,0 +1,20 @@
+mat-card {
+  padding-top: 2.5rem;
+  width: 80%;
+  margin: 0 auto;
+
+  div,
+  p {
+    text-align: center;
+  }
+  mat-card-actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  p.progress {
+    font-weight: 600;
+    font-size: 2rem;
+    margin-top: 1.5rem;
+  }
+}

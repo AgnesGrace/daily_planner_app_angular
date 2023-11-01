@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  <div class="header-start">
+    <mat-icon (click)="onToggleSidenav()">menu</mat-icon>
+    <a routerLink="/daily-planner">Daily Planner</a>
+  </div>
+  <ul class="header-end">
+    <li *ngIf="isAuth"><a routerLink="/daily-planner">Planner</a></li>
+    <li *ngIf="isAuth"><a routerLink="/tasks">My Tasks</a></li>
+    <li *ngIf="!isAuth"><a routerLink="/signup">Signup</a></li>
+    <li *ngIf="!isAuth"><a routerLink="/login">Login</a></li>
+    <li *ngIf="isAuth" (click)="onLogout()"><a>Logout</a></li>
+  </ul>
+</mat-toolbar>

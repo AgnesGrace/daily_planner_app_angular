@@ -1,0 +1,15 @@
+.new-task {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2.5rem;
+
+  mat-card {
+    width: 70%;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+}
